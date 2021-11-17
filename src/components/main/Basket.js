@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import Groceries from "./groceries";
+import GroceriesList from "./GroceriesList";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import "./main.scss";
 
 class Basket extends Component {
@@ -21,7 +23,15 @@ class Basket extends Component {
   }
 
   render() {
-    return <Groceries basket={"basket"} addOrRemoveOne={true} />;
+    return (
+      <div>
+        <h3>
+          <FontAwesomeIcon icon={faShoppingBasket} />
+          GroceriesList
+        </h3>
+        <GroceriesList basket={"basket"} addOrRemoveOne={true} />;
+      </div>
+    );
   }
 }
 

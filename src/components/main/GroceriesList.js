@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./main.scss";
 
-class Groceries extends Component {
+class GroceriesList extends Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
@@ -22,7 +22,7 @@ class Groceries extends Component {
         "Chicken",
       ],
       classItem: this.props.basket || "",
-      addOrRemoveOne: !this.props.addOrRemoveOne,
+      addOrRemoveOne: this.props.addOrRemoveOne,
     };
   }
   render() {
@@ -61,23 +61,16 @@ class Button extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      addOrRemoveOne: !this.props.addOrRemoveOne,
+      addOrRemoveOne: this.props.addOrRemoveOne,
     };
   }
   render() {
     return (
       <button className="button">
-        {" "}
         {this.state.addOrRemoveOne ? "-" : "+"}
       </button>
     );
   }
 }
 
-export default Groceries;
-
-// function addToBasket(event) {
-//   this.setState((prevState) => ({
-//     basket: prevState.basket.push(event.target.value),
-//   }));
-// }
+export default GroceriesList;

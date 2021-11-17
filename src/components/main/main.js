@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import "./main.scss";
-import Groceries from "./groceries";
+import GroceriesList from "./GroceriesList";
+import AddItemToBasket from "./AddItem";
 import Basket from "./Basket";
 
 class Main extends Component {
@@ -15,10 +14,10 @@ class Main extends Component {
       <div id="main">
         <div id="search">
           Search
-          <input placeholder="Search for groceries" id="searchBar" />
+          <input placeholder="Search for GroceriesList" id="searchBar" />
         </div>
-        <div id="groceriesShopping">
-          <Groceries />
+        <div id="GroceriesListShopping">
+          <AddItemToBasket />
           <Basket />
         </div>
       </div>
