@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-import Footer from "./components/footer/Footer";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Main from "./components/main/main";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
