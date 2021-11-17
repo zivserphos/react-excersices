@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@700&display=swap');
+
+#search {
+    background-color: pink;
+    margin: auto;
+    width: 50vw;
+    height: 13vh;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    display: block;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+#searchBar {
+    width: 50%;
+    height: 45%;
+    justify-content: center;
+    margin: auto;
+    display: block;
+}
+
+.list-group {
+    width: 20vw;
+    margin-left: 3rem;
+    margin-top: 1rem;
+}
+
+.button {
+    margin-right: 1rem;
+}
