@@ -21,13 +21,19 @@ class Groceries extends Component {
         "Butter",
         "Chicken",
       ],
+      classItem: this.props.basket || "",
+      addOrRemoveOne: !this.props.addOrRemoveOne,
     };
   }
   render() {
+    console.log(this.state.addOrRemoveOne);
     return (
-      <ul className="list-group">
+      <ul className={`list-group ${this.state.classItem || ""}`}>
         {this.state.items.map((item) => (
-          <GrocerieItem item={item} button={true} />
+          <GrocerieItem
+            item={item}
+            addOrRemoveOne={this.state.addOrRemoveOne}
+          />
         ))}
       </ul>
     );
@@ -38,13 +44,13 @@ class GrocerieItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Isbutton: props.button,
+      addOrRemoveOne: props.addOrRemoveOne || null,
     };
   }
   render() {
     return (
       <li className="list-group-item">
-        {this.state.Isbutton && <Button />}
+        <Button addOrRemoveOne={this.state.addOrRemoveOne} />
         {this.props.item}
       </li>
     );
@@ -55,11 +61,16 @@ class Button extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      button: <button className="button">+</button>,
+      addOrRemoveOne: !this.props.addOrRemoveOne,
     };
   }
   render() {
-    return this.state.button;
+    return (
+      <button className="button">
+        {" "}
+        {this.state.addOrRemoveOne ? "-" : "+"}
+      </button>
+    );
   }
 }
 

@@ -21,7 +21,7 @@ class Basket extends Component {
   }
 
   render() {
-    return <Groceries className="basket" />;
+    return <Groceries basket={"basket"} addOrRemoveOne={true} />;
   }
 }
 
