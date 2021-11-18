@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import GroceriesList from "./GroceriesList";
+import { GrocerieItem } from "./GroceriesList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import "./main.scss";
@@ -8,28 +8,30 @@ class Basket extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      counter: 0,
+      //counter: 0,
     };
   }
-  addOneToCart = () => {
-    this.setState({
-      counter: this.state.counter + 1,
-    });
-  };
-  removeOneFromBasket() {
-    this.setState({
-      counter: this.state.counter - 1,
-    });
-  }
-
   render() {
+    console.log(this.props.add);
     return (
       <div>
         <h3>
           <FontAwesomeIcon icon={faShoppingBasket} />
-          GroceriesList
+          Groceries List
         </h3>
-        <GroceriesList basket={"basket"} addOrRemoveOne={true} />;
+        <ul className="list-group">
+          {console.log(this.props.basket[0])}
+          {this.props.basket.map((obj, index) => {
+            return (
+              <GrocerieItem
+                key={index}
+                item={obj.item}
+                quantity={obj.quantity}
+                add={this.props.add}
+              />
+            );
+          })}
+        </ul>
       </div>
     );
   }
