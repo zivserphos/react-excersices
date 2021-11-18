@@ -30,7 +30,6 @@ class Main extends Component {
     };
   }
   addOneToCart = (item) => {
-    console.log(item);
     let newBasket = [...this.state.basket];
     const itemIndex = this.state.basket.findIndex((obj) => obj.item === item);
     if (itemIndex >= 0) {
@@ -40,19 +39,23 @@ class Main extends Component {
         item: item,
         quantity: 1,
       });
-      console.log(newBasket);
     }
-    // itemIndex >= 0
-    //   ? (newBasket[itemIndex].quantity += 1)
-    // : newBasket.push({
-    //     item: item,
-    //     quantity: 1,
-    //   });
     this.setState({
       basket: newBasket,
     });
-    //console.log(newBasket);
-    //return newBasket;
+  };
+
+  removeOneFromCart = (item) => {
+    let newBasket = [...this.state.basket];
+    const itemIndex = this.state.basket.findIndex((obj) => obj.item === item);
+    if (newBasket[itemIndex].quantity > 1) {
+      newBasket[itemIndex].quantity -= 1;
+    } else {
+      newBasket.splice(itemIndex, 1);
+    }
+    this.setState({
+      basket: newBasket,
+    });
   };
 
   render() {
@@ -64,7 +67,7 @@ class Main extends Component {
         </div>
         <div id="GroceriesListShopping">
           <GroceriesList items={this.state.items} add={this.addOneToCart} />
-          <Basket basket={this.state.basket} />
+          <Basket basket={this.state.basket} remove={this.removeOneFromCart} />
         </div>
       </div>
     );

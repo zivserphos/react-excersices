@@ -23,10 +23,10 @@ class GroceriesList extends Component {
         <ul className={`list-group ${this.state.classItem || ""}`}>
           {this.state.items.map((item, index) => (
             <GrocerieItem
-              add={this.props.add}
+              func={this.props.add}
+              mathSign="+"
               key={index}
               item={item}
-              addOrRemoveOne={this.state.addOrRemoveOne}
             />
           ))}
         </ul>
@@ -38,22 +38,39 @@ class GroceriesList extends Component {
 class GrocerieItem extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      addOrRemoveOne: props.addOrRemoveOne || null,
-    };
+    this.state = {};
   }
   render() {
     return (
       <li className="list-group-item">
-        <button
+        <Button
+          func={this.props.func}
+          mathSign={this.props.mathSign}
+          item={this.props.item}
+        />
+        {/* <button
           className="button"
           onClick={() => this.props.add(this.props.item)}
         >
           {this.state.addOrRemoveOne ? "-" : "+"}
-        </button>
-        {this.props.quantity ? `${this.props.quantity}` : ""}
+        </button> */}
+        {this.props.quantity ? ` ${this.props.quantity}` : ""}
         {` ${this.props.item}`}
       </li>
+    );
+  }
+}
+
+class Button extends Component {
+  constructor(props) {
+    super();
+    this.state = {};
+  }
+  render() {
+    return (
+      <button onClick={() => this.props.func(this.props.item)}>
+        {this.props.mathSign}
+      </button>
     );
   }
 }

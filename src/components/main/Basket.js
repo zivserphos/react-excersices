@@ -25,7 +25,8 @@ class Basket extends Component {
                 key={index}
                 item={obj.item}
                 quantity={obj.quantity}
-                add={this.props.add}
+                func={this.props.remove}
+                mathSign="-"
               />
             );
           })}
