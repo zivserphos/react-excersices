@@ -26,22 +26,33 @@ class Main extends Component {
     super(props);
     this.state = {
       items: items,
-      basket: [],
+      basket: [{ item: "banana", quantity: 2 }],
     };
   }
   addOneToCart = (item) => {
+    console.log(item);
     let newBasket = [...this.state.basket];
     const itemIndex = this.state.basket.findIndex((obj) => obj.item === item);
-    itemIndex >= 0
-      ? (newBasket[itemIndex].quantity += 1)
-      : newBasket.push({
-          item: item,
-          quantity: 1,
-        });
+    if (itemIndex >= 0) {
+      newBasket[itemIndex].quantity += 1;
+    } else {
+      newBasket.push({
+        item: item,
+        quantity: 1,
+      });
+      console.log(newBasket);
+    }
+    // itemIndex >= 0
+    //   ? (newBasket[itemIndex].quantity += 1)
+    // : newBasket.push({
+    //     item: item,
+    //     quantity: 1,
+    //   });
     this.setState({
       basket: newBasket,
     });
-    return newBasket;
+    //console.log(newBasket);
+    //return newBasket;
   };
 
   render() {

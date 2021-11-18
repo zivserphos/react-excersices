@@ -12,7 +12,6 @@ class Basket extends Component {
     };
   }
   render() {
-    console.log(this.props.add);
     return (
       <div>
         <h3>
@@ -20,7 +19,6 @@ class Basket extends Component {
           Groceries List
         </h3>
         <ul className="list-group">
-          {console.log(this.props.basket[0])}
           {this.props.basket.map((obj, index) => {
             return (
               <GrocerieItem

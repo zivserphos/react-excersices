@@ -45,7 +45,10 @@ class GrocerieItem extends Component {
   render() {
     return (
       <li className="list-group-item">
-        <button className="button" onClick={this.props.add}>
+        <button
+          className="button"
+          onClick={() => this.props.add(this.props.item)}
+        >
           {this.state.addOrRemoveOne ? "-" : "+"}
         </button>
         {this.props.quantity ? `${this.props.quantity}` : ""}
