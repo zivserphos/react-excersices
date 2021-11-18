@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { GrocerieItem } from "./GroceriesList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
+
 import "./main.scss";
 
 class Basket extends Component {
