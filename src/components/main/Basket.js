@@ -7,9 +7,7 @@ import "./main.scss";
 class Basket extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      //counter: 0,
-    };
+    this.state = {};
   }
   render() {
     return (

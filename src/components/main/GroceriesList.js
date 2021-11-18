@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeaf } from "@fortawesome/free-solid-svg-icons";
 
 class GroceriesList extends Component {
-  // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
     this.state = {
@@ -48,12 +47,6 @@ class GrocerieItem extends Component {
           mathSign={this.props.mathSign}
           item={this.props.item}
         />
-        {/* <button
-          className="button"
-          onClick={() => this.props.add(this.props.item)}
-        >
-          {this.state.addOrRemoveOne ? "-" : "+"}
-        </button> */}
         {this.props.quantity ? ` ${this.props.quantity}` : ""}
         {` ${this.props.item}`}
       </li>

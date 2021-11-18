@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import "./main.scss";
-import { GrocerieItem, GroceriesList } from "./GroceriesList";
-// import AddItemToBasket from "./AddItem";
+import { GroceriesList } from "./GroceriesList";
 import Basket from "./Basket";
+import "./main.scss";
 
 const items = [
   "Strawberry",
@@ -21,7 +20,6 @@ const items = [
 ];
 
 class Main extends Component {
-  // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
     this.state = {
